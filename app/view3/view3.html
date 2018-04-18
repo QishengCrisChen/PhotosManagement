@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="panel panel-default">
+       <div class="panel-heading" style="text-align:center; font-size:30px "><i class="fa fa-cog" aria-hidden="true"></i>Manage Photo</div>
+       <div class="panel-body">
+           <div class="col-md-6">
+           	   <div class="form-group">
+           	   	  <input type="text" class="form-control" ng-model="searchPhoto" name="searchPhoto" placeholder="Search Your Photo Here">
+           	   </div>
+           </div>
+           <div class="col-md-2">
+           	   <a href="#/upload" class="btn btn-info btn-block">Add more Photos</a>
+           </div>
+           <div class="col-md-2">
+           	   <a href="#/gallery" class="btn btn-warning btn-block">Photo Gallarry</a>
+            </div>
+           <div class="col-md-2">
+               <a href="#/manage" class="btn btn-success btn-block">Manage Photos</a>
+           </div>
+       </div>
+       <hr style="margin-top: 0">
+       <div class="row">
+        <div class="col-md-3">Photo</div>
+        <div class="col-md-3">Name</div>
+        <div class="col-md-3">Tag</div>
+        <div class="col-md-3 text-center">Actions</div>
+        <hr>
+        <div class="row" ng-repeat="url in urls | filter:searchPhoto" style="margin-bottom:15px">
+          <div class="col-md-3">
+            <img ng-src="{{ url.imageUrl }}" width=150>
+          </div>
+          <div class="col-md-3">
+            <img ng-src="{{ url.imgeName }}">
+          </div>
+          <div class="col-md-3">
+            <img ng-src="{{ url.tags }}">
+          </div>
+          <div class="col-md-3 text-right">
+            <button class="btn btn-danger btn-block" ng-click="deletePhoto(url)">Remove Photo</button>
+          </div>
+        </div>
+       </div>
+   </div>
+</div>

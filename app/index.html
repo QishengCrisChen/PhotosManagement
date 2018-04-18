@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+
+
+ <html lang="en" ng-app="myApp" class="no-js"> 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Photo Uploader App by Cris Chen</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-right">
+       <li><a href="#/upload"><i class="fa fa-upload" aria-hidden="true"></i>Upload Photo</a></li>
+       <li><a href="#/gallery"><i class="fa fa-picture-o" aria-hidden="true"></i>Phote Gallery</a></li>
+       <li><a href="#/manage"><i class="fa fa-cog" aria-hidden="true"></i>Manage Photes</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+
+
+  <div ng-view></div>
+
+  <script src="bower_components/firebase/firebase-app.js"></script> 
+  <script src="bower_components/firebase/firebase-storage.js"></script> 
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angularfire/dist/angularfire.js"></script>
+  <script src="bower_components/upload/dist/ng-file-upload.js"></script>
+  <script src="bower_components/upload/dist/ng-file-upload.min.js"></script>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCrCzHZZTDpm-PE0Yx6aIV5QpEpl0gF7CY",
+    authDomain: "photo-manager-qisheng-chen.firebaseapp.com",
+    databaseURL: "https://photo-manager-qisheng-chen.firebaseio.com",
+    projectId: "photo-manager-qisheng-chen",
+    storageBucket: "photo-manager-qisheng-chen.appspot.com",
+    messagingSenderId: "811326564273"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+  <script src="app.js"></script>
+  <script src="view1/view1.js"></script>
+  <script src="view2/view2.js"></script>
+  <script src="view3/view3.js"></script>
+</body>
+</html>
